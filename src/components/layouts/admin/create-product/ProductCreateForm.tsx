@@ -164,7 +164,7 @@ const ProductCreateForm = ({
 
     if (!file) return;
 
-    if (file.size > 2 * 1024 * 1024) {
+    if (file.size > 3 * 1024 * 1024) {
       toast.warning('Thumbnail image must be less than 2MB.');
       e.target.value = '';
       return;
