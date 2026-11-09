@@ -34,18 +34,18 @@ const Footer = () => {
     {
       title: 'Facebook',
       src: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/facebook-icon.svg',
-      link: '#',
+      link: 'https://www.facebook.com/profile.php?id=61592920054570',
     },
     {
       title: 'X',
       src: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/x.svg',
       className: 'dark:invert',
-      link: '#',
+      link: 'https://www.facebook.com/profile.php?id=61592920054570',
     },
     {
       title: 'Instagram',
       src: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/instagram-icon.svg',
-      link: '#',
+      link: 'https://www.facebook.com/profile.php?id=61592920054570',
     },
   ];
   return (
