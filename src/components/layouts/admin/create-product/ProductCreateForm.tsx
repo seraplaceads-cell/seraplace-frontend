@@ -165,7 +165,7 @@ const ProductCreateForm = ({
     if (!file) return;
 
     if (file.size > 3 * 1024 * 1024) {
-      toast.warning('Thumbnail image must be less than 2MB.');
+      toast.warning('Thumbnail image must be less than 3MB.');
       e.target.value = '';
       return;
     }
@@ -220,8 +220,8 @@ const ProductCreateForm = ({
       const uploaded: string[] = [];
 
       for (const file of selectedFiles) {
-        if (file.size > 2 * 1024 * 1024) {
-          toast.warning(`${file.name} is larger than 2MB.`);
+        if (file.size > 3 * 1024 * 1024) {
+          toast.warning(`${file.name} is larger than 3MB.`);
           continue;
         }
 
@@ -301,8 +301,8 @@ const ProductCreateForm = ({
 
     if (!file) return;
 
-    if (file.size > 2 * 1024 * 1024) {
-      toast.warning('Color image must be less than 2MB.');
+    if (file.size > 3 * 1024 * 1024) {
+      toast.warning('Color image must be less than 3MB.');
       e.target.value = '';
       return;
     }
