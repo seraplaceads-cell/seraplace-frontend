@@ -4,7 +4,14 @@ import ProductReviews from '@/components/layouts/public/product-details/ProductR
 import RelatedProduct from '@/components/layouts/public/product-details/RelatedProduct';
 import ProductViewTracker from '@/components/layouts/shared/analytics/ProductViewTracker';
 import { getSingleProduct } from '@/services/product.service';
-import { Star, Truck, MapPin, CheckCircle, ChevronRight } from 'lucide-react';
+import {
+  Star,
+  Truck,
+  MapPin,
+  CheckCircle,
+  ChevronRight,
+  ShieldCheck,
+} from 'lucide-react';
 import Link from 'next/link';
 
 interface ProductDetailsPageProps {
@@ -49,7 +56,7 @@ export default async function ProductDetailsPage({
         : null;
 
   return (
-    <div className="container mx-auto px-3 md:px-4 py-8 md:py-10">
+    <div className="container mx-auto  md:px-4 py-8 md:py-10">
       {/* send data to gtm */}
       <ProductViewTracker
         productId={product.id}
@@ -60,8 +67,8 @@ export default async function ProductDetailsPage({
           BREADCRUMB
       ====================================================== */}
 
-      <div className="flex items-center gap-2 text-sm text-gray-500 mb-6 flex-wrap">
-        <Link href="/" className="hover:text-primary">
+      <div className=" flex items-center gap-2 text-sm text-gray-500 mb-6 flex-wrap">
+        <Link href="/" className="hover:text-primary px-3">
           Home
         </Link>
 
@@ -124,7 +131,7 @@ export default async function ProductDetailsPage({
             {/* Description */}
 
             {product.description && (
-              <p className="text-sm text-gray-600 mt-3 leading-6">
+              <p className="text-sm text-gray-600 mt-3 leading-6 hidden sm:block">
                 {product.description}
               </p>
             )}
@@ -165,7 +172,7 @@ export default async function ProductDetailsPage({
                 PRICE
             ================================================== */}
 
-            <div className="bg-gray-50 rounded-sm p-4 mt-5">
+            <div className="bg-gray-50 rounded-sm p-4 md:mt-5">
               <div className="flex items-center gap-3 flex-wrap">
                 <span className="text-3xl font-bold text-title">
                   ৳{currentPrice.toLocaleString()}
@@ -191,6 +198,20 @@ export default async function ProductDetailsPage({
 
             <ProductPurchaseOptions product={product} />
 
+            {/* Product descriptiton in mobile */}
+
+            {product.description && (
+              <>
+                {' '}
+                <h1 className="text-lg font-bold text-gray-800 mt-4 sm:hidden">
+                  Description
+                </h1>
+                <p className="text-sm text-gray-600 mt-3 leading-6 sm:hidden">
+                  {product.description}
+                </p>
+              </>
+            )}
+
             {/* =================================================
                 DELIVERY
             ================================================== */}
@@ -199,6 +220,35 @@ export default async function ProductDetailsPage({
               <h3 className="font-semibold text-gray-800 mb-3">
                 Delivery Options
               </h3>
+
+              {/* Trust Features */}
+              <div className="grid grid-cols-2 gap-3 rounded-md border border-gray-100 bg-gray-50 p-3 my-3">
+                <div className="flex items-center gap-2">
+                  <Truck className="h-5 w-5 shrink-0 text-primary" />
+
+                  <div>
+                    <p className="text-xs font-semibold text-gray-800">
+                      Cash on delivery available
+                    </p>
+                    <p className="text-[11px] text-gray-500">
+                      All Over Bangladesh
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="h-5 w-5 shrink-0 text-primary" />
+
+                  <div>
+                    <p className="text-xs font-semibold text-gray-800">
+                      100% Original Product
+                    </p>
+                    <p className="text-[11px] text-gray-500">
+                      Guaranteed Product
+                    </p>
+                  </div>
+                </div>
+              </div>
 
               <div className="space-y-3">
                 <div className="flex items-start gap-2">

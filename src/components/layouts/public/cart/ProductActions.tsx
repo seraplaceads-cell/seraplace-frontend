@@ -2,13 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import {
-  Heart,
-  Loader2,
-  MessageCircle,
-  Phone,
-  ShoppingCart,
-} from 'lucide-react';
+import { Loader2, Phone, ShoppingCart } from 'lucide-react';
 import { createWishlist } from '@/services/wishlist.service';
 import { useCartStore } from '@/store/cart.store';
 import { IProduct } from '@/types/products.type';
@@ -17,6 +11,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { useOrderStore } from '@/store/order.store';
 import { useProductStore } from '@/store/product.store';
+import { FaWhatsapp } from 'react-icons/fa';
 
 type Props = {
   productId: string;
@@ -196,7 +191,7 @@ Price: ৳${product.specialPrice || product.price}`;
     cursor-pointer
   "
         >
-          <span className="order-ring inline-block">অর্ডার করুন</span>
+          <span className="order-ring inline-block">Order Now</span>
         </button>
 
         {/* Wishlist */}
@@ -259,8 +254,8 @@ Price: ৳${product.specialPrice || product.price}`;
         cursor-pointer
       "
         >
-          <MessageCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
-          <span>WhatsApp-এ অর্ডার</span>
+          <FaWhatsapp className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
+          <span>Order In Whatsapp</span>
         </button>
 
         {/* Call Order */}
@@ -292,7 +287,7 @@ Price: ৳${product.specialPrice || product.price}`;
       "
         >
           <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
-          <span>কল করে অর্ডার</span>
+          <span>Order In Call</span>
         </button>
       </div>
     </div>

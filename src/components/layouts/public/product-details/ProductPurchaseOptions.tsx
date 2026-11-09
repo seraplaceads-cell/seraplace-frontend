@@ -35,36 +35,13 @@ const ProductPurchaseOptions = ({ product }: Props) => {
   };
 
   return (
-    <div className="mt-6 space-y-6">
-      {/* Trust Features */}
-      <div className="grid grid-cols-2 gap-3 rounded-md border border-gray-100 bg-gray-50 p-3">
-        <div className="flex items-center gap-2">
-          <Truck className="h-5 w-5 shrink-0 text-primary" />
-
-          <div>
-            <p className="text-xs font-semibold text-gray-800">
-              ক্যাশ অন ডেলিভারি
-            </p>
-            <p className="text-[11px] text-gray-500">সারা বাংলাদেশে</p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <ShieldCheck className="h-5 w-5 shrink-0 text-primary" />
-
-          <div>
-            <p className="text-xs font-semibold text-gray-800">১০০% অরিজিনাল</p>
-            <p className="text-[11px] text-gray-500">Guaranteed Product</p>
-          </div>
-        </div>
-      </div>
-
+    <div className="mt-3 md:mt-6 space-y-6">
       {/* Color */}
       {product.colorVariants?.length > 0 && (
         <div>
           <div className="mb-3 flex items-center justify-between">
             <h3 className="text-sm font-semibold text-gray-800">
-              কালার নির্বাচন করুন
+              Available Colors
             </h3>
 
             {selectedColor && (
@@ -109,7 +86,7 @@ const ProductPurchaseOptions = ({ product }: Props) => {
               Available Sizes
             </h3>
 
-            <span className="text-xs text-gray-500">Size নির্বাচন করুন</span>
+            <span className="text-xs text-gray-500">Select Size</span>
           </div>
 
           <div className="grid grid-cols-6 gap-1.25 sm:gap-2 sm:flex sm:flex-wrap">
@@ -148,7 +125,7 @@ const ProductPurchaseOptions = ({ product }: Props) => {
       )}
 
       {/* Stock */}
-      <div className="flex items-center justify-between rounded-md border border-gray-100 bg-gray-50 px-4 py-3">
+      {/* <div className="flex items-center justify-between rounded-md border border-gray-100 bg-gray-50 px-4 py-3">
         <div>
           <p className="text-xs text-gray-500">Available Stock</p>
           <p className="mt-0.5 text-sm font-semibold text-gray-800">
@@ -163,7 +140,7 @@ const ProductPurchaseOptions = ({ product }: Props) => {
         >
           {product.stock}
         </div>
-      </div>
+      </div> */}
 
       {/* Actions */}
       <ProductActions product={product} productId={product.id} />
